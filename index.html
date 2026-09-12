@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دعوة زفاف · بشير الزطمة & لمى أبو سلمية · 20 / 10 / 2026</title>
+<meta name="description" content="بطاقة دعوة زفاف بشير عصام الدين الزطمة و لمى عماد عودة أبو سلمية — الثلاثاء 20/10/2026 — صالة فرح — الساعة 6 مساءً">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%8D%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<style>
+:root{
+  --ink:#050d0b;
+  --emerald:#07231d;
+  --emerald-2:#0c352b;
+  --gold:#d4af37;
+  --gold-l:#f3e2ab;
+  --gold-d:#9a7a22;
+  --cream:#f8f2e4;
+  --rose:#e7c9c2;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'Cairo',system-ui,sans-serif;
+  overflow-x:hidden;
+}
+body.locked{overflow:hidden;height:100vh}
+
+.font-ruqaa{font-family:'Aref Ruqaa',serif}
+.font-amiri{font-family:'Amiri',serif}
+.font-sch{font-family:'Scheherazade New',serif}
+
+/* ===== خلفيات ونقوش ===== */
+.pattern{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23d4af37' stroke-width='0.7' opacity='0.55'%3E%3Cpath d='M30 3 36.5 17.5 51 11 44.5 25.5 59 30 44.5 34.5 51 49 36.5 42.5 30 57 23.5 42.5 9 49 15.5 34.5 1 30 15.5 25.5 9 11 23.5 17.5Z'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:64px 64px;
+}
+.pattern-soft{opacity:.07}
+.grain:after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.25;
+  background-image:radial-gradient(circle at 20% 30%,rgba(212,175,55,.10),transparent 45%),
+                   radial-gradient(circle at 80% 70%,rgba(212,175,55,.08),transparent 45%);
+}
+.gold-text{
+  background:linear-gradient(180deg,#fff7dc 0%,var(--gold-l) 25%,var(--gold) 55%,var(--gold-d) 80%,#f6e6b4 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.45));
+}
+.gold-line{
+  height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.gold-border{border:1px solid rgba(212,175,55,.45)}
+.glass{
+  background:linear-gradient(160deg,rgba(12,53,43,.75),rgba(5,13,11,.85));
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 20px 50px -25px rgba(0,0,0,.9), inset 0 0 40px rgba(212,175,55,.05);
+}
+.frame-corner{position:relative}
+.frame-corner:before,.frame-corner:after{
+  content:"";position:absolute;width:38px;height:38px;border:2px solid var(--gold);opacity:.75;
+}
+.frame-corner:before{top:-2px;right:-2px;border-left:0;border-bottom:0;border-radius:0 14px 0 0}
+.frame-corner:after{bottom:-2px;left:-2px;border-right:0;border-top:0;border-radius:0 0 0 14px}
+
+.arch{border-radius:50% 50% 18px 18px / 26% 26% 18px 18px}
+
+/* ===== شريط التقدم ===== */
+#progress{position:fixed;top:0;right:0;height:3px;width:0;z-index:80;
+  background:linear-gradient(90deg,var(--gold-d),var(--gold-l),var(--gold));box-shadow:0 0 12px rgba(212,175,55,.8)}
+
+/* ===== المظروف ===== */
+#envelope-screen{
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;
+  background:radial-gradient(circle at 50% 35%,#123c31 0%,#07231d 45%,#030807 100%);
+  transition:opacity .9s ease,visibility .9s;
+}
+#envelope-screen.open{opacity:0;visibility:hidden}
+.env{
+  position:relative;width:min(86vw,420px);aspect-ratio:3/2;perspective:1400px;cursor:pointer;
+  filter:drop-shadow(0 30px 45px rgba(0,0,0,.65));
+}
+.env-body{position:absolute;inset:0;background:linear-gradient(150deg,#0d3a2f,#092620);border:1px solid rgba(212,175,55,.5);border-radius:10px;overflow:hidden}
+.env-body:before{content:"";position:absolute;inset:0;
+  background:linear-gradient(45deg,transparent 48%,rgba(212,175,55,.28) 49.5%,transparent 51%),
+             linear-gradient(-45deg,transparent 48%,rgba(212,175,55,.28) 49.5%,transparent 51%)}
+.env-flap{
+  position:absolute;top:0;left:0;right:0;height:58%;
+  background:linear-gradient(180deg,#10473a,#0b3125);
+  clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top center;transition:transform 1s cubic-bezier(.7,-0.4,.3,1.4);
+  border-bottom:1px solid rgba(212,175,55,.4);z-index:3;
+}
+.env.opened .env-flap{transform:rotateX(-180deg);z-index:1}
+.env-card{
+  position:absolute;left:6%;right:6%;bottom:8%;height:78%;z-index:2;
+  background:linear-gradient(180deg,#fbf6ea,#efe4cb);border-radius:8px;
+  display:grid;place-items:center;text-align:center;color:#0b3125;
+  transform:translateY(0) scale(.96);opacity:0;transition:all 1s .45s cubic-bezier(.2,.8,.2,1);
+  box-shadow:0 -6px 20px rgba(0,0,0,.35);
+}
+.env.opened .env-card{transform:translateY(-46%) scale(1);opacity:1}
+.seal{
+  position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);width:88px;height:88px;border-radius:50%;z-index:5;
+  background:radial-gradient(circle at 35% 30%,#f6e2a7,#d4af37 45%,#8a6a17 100%);
+  display:grid;place-items:center;color:#07231d;font-family:'Aref Ruqaa',serif;font-size:26px;
+  box-shadow:0 10px 24px rgba(0,0,0,.5), inset 0 0 14px rgba(255,255,255,.35);
+  animation:pulse 2.4s ease-in-out infinite;transition:all .6s;
+}
+.env.opened .seal{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(60deg)}
+@keyframes pulse{0%,100%{box-shadow:0 10px 24px rgba(0,0,0,.5),0 0 0 0 rgba(212,175,55,.45), inset 0 0 14px rgba(255,255,255,.35)}
+50%{box-shadow:0 10px 24px rgba(0,0,0,.5),0 0 0 22px rgba(212,175,55,0), inset 0 0 14px rgba(255,255,255,.35)}}
+
+/* ===== ظهور عند التمرير ===== */
+.reveal{opacity:0;transform:translateY(38px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}.d4{transition-delay:.48s}
+
+/* ===== العداد ===== */
+.count-box{
+  min-width:86px;padding:14px 10px;border-radius:14px;
+  background:linear-gradient(180deg,rgba(212,175,55,.14),rgba(5,13,11,.6));
+  border:1px solid rgba(212,175,55,.4);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 16px 30px -22px #000;
+}
+.count-num{font-family:'Amiri',serif;font-size:2.4rem;line-height:1;font-weight:700}
+
+/* ===== الخط الزمني ===== */
+.tl{position:relative;padding-inline-start:34px}
+.tl:before{content:"";position:absolute;right:12px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(180deg,transparent,var(--gold),transparent);opacity:.6}
+.tl-item{position:relative;margin-bottom:26px}
+.tl-item:before{content:"";position:absolute;right:-28px;top:8px;width:14px;height:14px;border-radius:50%;
+  background:radial-gradient(circle,#fff3cf,var(--gold));box-shadow:0 0 0 4px rgba(212,175,55,.18)}
+
+/* ===== الأزرار ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;
+  border:1px solid rgba(212,175,55,.55);color:var(--gold-l);
+  background:linear-gradient(180deg,rgba(212,175,55,.16),rgba(212,175,55,.04));
+  transition:.3s;cursor:pointer;text-decoration:none;
+}
+.btn:hover{background:linear-gradient(180deg,var(--gold),var(--gold-d));color:#07231d;transform:translateY(-2px);box-shadow:0 14px 26px -14px rgba(212,175,55,.8)}
+.btn-solid{background:linear-gradient(180deg,#f0dca2,var(--gold));color:#07231d;border-color:transparent}
+.btn-solid:hover{filter:brightness(1.08)}
+
+input,select,textarea{
+  width:100%;padding:12px 14px;border-radius:12px;background:rgba(5,13,11,.6);
+  border:1px solid rgba(212,175,55,.3);color:var(--cream);font-family:'Cairo',sans-serif;outline:none;transition:.25s
+}
+input:focus,select,textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.15)}
+select option{background:#07231d}
+label{font-size:.85rem;color:#cbbf9e;margin-bottom:6px;display:block}
+
+.map-wrap{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 30px 60px -35px #000}
+.map-wrap iframe{display:block;filter:saturate(.9) contrast(1.03)}
+
+.photo{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(212,175,55,.35)}
+.photo img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease;filter:sepia(.18) saturate(.95)}
+.photo:hover img{transform:scale(1.09)}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,35,29,.12),rgba(5,13,11,.75))}
+
+#petals{position:fixed;inset:0;pointer-events:none;z-index:60}
+
+.bottom-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:70;display:flex;gap:8px;padding:10px 12px;
+  background:linear-gradient(180deg,rgba(5,13,11,.4),rgba(5,13,11,.96));
+  border-top:1px solid rgba(212,175,55,.3);backdrop-filter:blur(8px);
+  transform:translateY(120%);transition:transform .5s
+}
+.bottom-bar.show{transform:none}
+.bottom-bar a,.bottom-bar button{flex:1;font-size:.8rem;padding:10px 6px}
+@media (min-width:640px){.bottom-bar{display:none!important}}
+
+.note-card{
+  background:linear-gradient(160deg,rgba(212,175,55,.10),rgba(5,13,11,.55));
+  border:1px solid rgba(212,175,55,.28);border-radius:16px;padding:22px;transition:.35s
+}
+.note-card:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.7);box-shadow:0 22px 40px -26px #000}
+.monogram{
+  width:110px;height:110px;margin-inline:auto;border-radius:50%;display:grid;place-items:center;
+  border:1px solid rgba(212,175,55,.5);
+  background:radial-gradient(circle at 40% 30%,rgba(212,175,55,.22),transparent 65%);
+  font-family:'Aref Ruqaa',serif;font-size:1.6rem;color:var(--gold-l);
+  animation:float 5s ease-in-out infinite
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+.toast{
+  position:fixed;top:18px;left:50%;transform:translate(-50%,-140%);z-index:120;
+  background:linear-gradient(180deg,#f0dca2,var(--gold));color:#07231d;font-weight:700;
+  padding:12px 22px;border-radius:999px;box-shadow:0 18px 40px -18px #000;transition:transform .5s
+}
+.toast.show{transform:translate(-50%,0)}
+
+.music-btn{
+  position:fixed;top:16px;left:16px;z-index:75;width:48px;height:48px;border-radius:50%;
+  display:grid;place-items:center;border:1px solid rgba(212,175,55,.5);color:var(--gold-l);
+  background:rgba(5,13,11,.7);backdrop-filter:blur(6px);cursor:pointer;transition:.3s
+}
+.music-btn:hover{background:var(--gold);color:#07231d}
+.music-btn.playing svg{animation:spin 6s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.wish{border-inline-start:3px solid var(--gold);padding:10px 14px;border-radius:10px;background:rgba(212,175,55,.06)}
+
+@media print{
+  #envelope-screen,#petals,.bottom-bar,.music-btn,#progress,.no-print{display:none!important}
+  body{background:#fff;color:#111}
+  .glass{background:#fff;border-color:#bfa14a}
+  .gold-text{-webkit-text-fill-color:#9a7a22;color:#9a7a22}
+}
+</style>
+</head>
+<body class="locked">
+
+<div id="progress"></div>
+<canvas id="petals"></canvas>
+<div class="toast" id="toast">تم ✓</div>
+
+<!-- ===================== شاشة فتح المظروف ===================== -->
+<div id="envelope-screen">
+  <div class="text-center px-5">
+    <p class="font-amiri text-[color:var(--gold-l)] text-lg mb-1">بسم الله الرحمن الرحيم</p>
+    <p class="text-xs tracking-[.45em] text-[#9ab5a9] mb-7">WEDDING INVITATION</p>
+
+    <div class="env" id="env">
+      <div class="env-body"></div>
+      <div class="env-card">
+        <div>
+          <p class="font-ruqaa text-2xl">بشير &nbsp;<span class="text-[color:var(--gold-d)]">&</span>&nbsp; لمى</p>
+          <p class="text-xs mt-2 tracking-widest">20 · 10 · 2026</p>
+        </div>
+      </div>
+      <div class="env-flap"></div>
+      <div class="seal">B ♡ L</div>
+    </div>
+
+    <p class="mt-8 text-sm text-[#c9bf9f]" id="envGuest">أهلنا وأحبتنا الكرام</p>
+    <button class="btn btn-solid mt-4" id="openBtn">اضغط لفتح الدعوة ✦</button>
+  </div>
+</div>
+
+<!-- ===================== زر الموسيقى ===================== -->
+<button class="music-btn" id="musicBtn" title="موسيقى هادئة">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
+</button>
+
+<!-- ===================== الغلاف الرئيسي ===================== -->
+<header class="relative min-h-[100svh] flex items-center justify-center overflow-hidden grain">
+  <img src="https://images.pexels.com/photos/18530977/pexels-photo-18530977.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="" class="absolute inset-0 w-full h-full object-cover opacity-25">
+  <div class="absolute inset-0" style="background:radial-gradient(circle at 50% 40%,rgba(12,53,43,.55),rgba(5,13,11,.94) 70%)"></div>
+  <div class="absolute inset-0 pattern pattern-soft"></div>
+
+  <div class="relative z-10 text-center px-6 py-20 max-w-3xl mx-auto">
+    <p class="font-amiri text-xl md:text-2xl gold-text reveal">بسم الله الرحمن الرحيم</p>
+    <div class="gold-line w-40 mx-auto my-6 reveal d1"></div>
+
+    <p class="text-sm md:text-base text-[#cdbf9c] leading-loose reveal d1">
+      بعون الله وتوفيقه وعلى سنّة الله ورسوله ﷺ<br>نتشرف بدعوتكم لمشاركتنا فرحة العمر
+    </p>
+
+    <h1 class="mt-8 reveal d2">
+      <span class="block font-ruqaa text-5xl sm:text-6xl md:text-7xl gold-text leading-[1.5]">بشير</span>
+      <span class="block my-3 text-3xl text-[color:var(--gold)]">♡</span>
+      <span class="block font-ruqaa text-5xl sm:text-6xl md:text-7xl gold-text leading-[1.5]">لمى</span>
+    </h1>
+
+    <div class="mt-8 flex items-center justify-center gap-4 reveal d3">
+      <span class="gold-line w-16 md:w-24"></span>
+      <span class="font-amiri text-lg md:text-xl text-[color:var(--gold-l)]" id="heroDate">الثلاثاء 20 / 10 / 2026</span>
+      <span class="gold-line w-16 md:w-24"></span>
+    </div>
+    <p class="mt-3 text-sm text-[#b9ccc2] reveal d3">صالة فرح &nbsp;·&nbsp; الساعة 6:00 مساءً</p>
+    <p class="mt-1 text-xs text-[#8fa79c] font-amiri reveal d4" id="hijriDate"></p>
+
+    <div class="mt-10 flex flex-wrap gap-3 justify-center reveal d4">
+      <a href="#location" class="btn">📍 موقع الصالة</a>
+      <a href="#rsvp" class="btn btn-solid">تأكيد الحضور</a>
+    </div>
+  </div>
+
+  <a href="#verse" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-[color:var(--gold)] text-xs text-center animate-bounce">
+    <span class="block mb-1">انزل للأسفل</span>
+    <span class="text-lg">⌄</span>
+  </a>
+</header>
+
+<!-- ===================== آية الروم ===================== -->
+<section id="verse" class="relative py-24 px-5 overflow-hidden">
+  <div class="absolute inset-0 pattern pattern-soft"></div>
+  <div class="relative max-w-3xl mx-auto text-center">
+    <div class="glass arch px-6 sm:px-12 py-14 reveal">
+      <div class="text-[color:var(--gold)] text-2xl mb-4">﴾ ✵ ﴿</div>
+      <p class="font-amiri text-2xl sm:text-3xl md:text-[2.1rem] leading-[2.3] text-[color:var(--cream)]">
+        ﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا
+        وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ ﴾
+      </p>
+      <p class="mt-6 text-sm text-[color:var(--gold)] tracking-wide">صدق الله العظيم — سورة الروم: ٢١</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== دعوة الأهل ===================== -->
+<section class="relative py-16 px-5">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="text-sm tracking-[.4em] text-[color:var(--gold)] mb-8 reveal">بطاقة دعوة</p>
+    <div class="glass frame-corner rounded-2xl px-6 sm:px-10 py-12 reveal d1">
+      <p class="text-[#cdbf9c] leading-loose text-base sm:text-lg">
+        يتشرّف الدكتور
+        <span class="font-ruqaa text-[color:var(--gold-l)] text-xl sm:text-2xl">عصام الدين بشير الزطمة</span>
+        وعائلته الكريمة
+      </p>
+      <!-- <p class="my-4 text-[color:var(--gold)]">&nbsp;و&nbsp;</p> -->
+    <!--   <p class="text-[#cdbf9c] leading-loose text-base sm:text-lg">
+        السيّد
+        <span class="font-ruqaa text-[color:var(--gold-l)] text-xl sm:text-2xl">عماد عودة أبو سلمية</span>
+        وعائلته الكريمة
+      </p> -->
+      <div class="gold-line w-2/3 mx-auto my-8"></div>
+      <p class="text-[#cdbf9c] leading-loose text-base sm:text-lg" id="guestLine">
+        بدعوتكم لمشاركتهم فرحتهم بحفل زفاف 
+      </p>
+      <p class="mt-6 font-ruqaa text-2xl sm:text-3xl gold-text leading-[1.8]">
+        المهندس بشير عصام الدين بشير الزطمة
+      </p>
+      <p class="my-2 text-xl text-[color:var(--gold)]">✦</p>
+      <p class="font-ruqaa text-2xl sm:text-3xl gold-text leading-[1.8]">
+        الأستاذة لمى عماد عودة أبو سلمية
+      </p>
+      <p class="mt-8 text-xs sm:text-sm text-[#9ab5a9] leading-loose">
+        سائلين المولى عزّ وجلّ أن يجعله زواجاً مباركاً ميموناً<br>
+        وأن يجمع بينهما في خير ويبارك لهما ويبارك عليهما
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== العريس والعروس ===================== -->
+<section class="relative py-20 px-5 overflow-hidden">
+  <div class="absolute inset-0 pattern pattern-soft"></div>
+  <div class="relative max-w-5xl mx-auto">
+    <h2 class="text-center font-ruqaa text-3xl sm:text-4xl gold-text mb-3 reveal leading-[1.7]">العروسان</h2>
+    <div class="gold-line w-32 mx-auto mb-14 reveal"></div>
+
+    <div class="grid md:grid-cols-[1fr_auto_1fr] gap-8 items-center">
+      <!-- العريس -->
+      <div class="glass rounded-2xl p-8 text-center reveal d1">
+        <div class="w-20 h-20 mx-auto rounded-full grid place-items-center gold-border mb-5" style="background:radial-gradient(circle,rgba(212,175,55,.2),transparent)">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#f3e2ab" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 20h20"/><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/>
+          </svg>
+        </div>
+        <p class="text-xs tracking-[.35em] text-[color:var(--gold)] mb-3">العريس</p>
+        <h3 class="font-ruqaa text-2xl sm:text-3xl gold-text leading-[1.8]">بشير عصام الدين الزطمة</h3>
+        <p class="mt-4 text-sm text-[#cdbf9c] leading-loose">
+          مهندس · يبني بيوتاً من حجر<br>واليوم يبني بيتاً من مودّة ورحمة
+        </p>
+        <p class="mt-4 text-[color:var(--gold)] text-xl">⚙︎ ✎ ⌗</p>
+      </div>
+
+      <!-- القلب -->
+      <div class="hidden md:grid place-items-center reveal d2">
+        <div class="w-14 h-14 rounded-full grid place-items-center text-2xl"
+             style="background:radial-gradient(circle at 35% 30%,#f6e2a7,#d4af37 55%,#8a6a17);color:#07231d">♡</div>
+      </div>
+
+      <!-- العروس -->
+      <div class="glass rounded-2xl p-8 text-center reveal d3">
+        <div class="w-20 h-20 mx-auto rounded-full grid place-items-center gold-border mb-5" style="background:radial-gradient(circle,rgba(231,201,194,.18),transparent)">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#f3e2ab" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M12 7v7"/><path d="M9.5 9.5 12 7l2.5 2.5"/>
+          </svg>
+        </div>
+        <p class="text-xs tracking-[.35em] text-[color:var(--gold)] mb-3">العروس</p>
+        <h3 class="font-ruqaa text-2xl sm:text-3xl gold-text leading-[1.8]">لمى عماد عودة أبو سلمية</h3>
+        <p class="mt-4 text-sm text-[#cdbf9c] leading-loose">
+          مدرّسة · تزرع العلم في القلوب<br>واليوم تكتب أجمل دروس الحياة
+        </p>
+        <p class="mt-4 text-[color:var(--gold)] text-xl">✿ 📖 ✿</p>
+      </div>
+    </div>
+
+    <p class="text-center mt-12 font-amiri text-lg sm:text-xl text-[#cdbf9c] leading-[2.2] reveal d4">
+      ﴿ وَأَنكِحُوا الْأَيَامَىٰ مِنكُمْ وَالصَّالِحِينَ مِنْ عِبَادِكُمْ وَإِمَائِكُمْ ۚ
+      إِن يَكُونُوا فُقَرَاءَ يُغْنِهِمُ اللَّهُ مِن فَضْلِهِ ﴾
+      <span class="block text-xs text-[color:var(--gold)] mt-3 font-sans">سورة النور: ٣٢</span>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== العدّاد التنازلي ===================== -->
+<section class="relative py-20 px-5">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="font-ruqaa text-3xl sm:text-4xl gold-text mb-3 reveal leading-[1.7]">باقٍ على الفرح</h2>
+    <div class="gold-line w-32 mx-auto mb-10 reveal"></div>
+
+    <div class="flex flex-wrap justify-center gap-3 sm:gap-5 reveal d1" id="countdown">
+      <div class="count-box"><div class="count-num gold-text" id="cd-days">00</div><div class="text-xs mt-2 text-[#b9ccc2]">يوم</div></div>
+      <div class="count-box"><div class="count-num gold-text" id="cd-hours">00</div><div class="text-xs mt-2 text-[#b9ccc2]">ساعة</div></div>
+      <div class="count-box"><div class="count-num gold-text" id="cd-mins">00</div><div class="text-xs mt-2 text-[#b9ccc2]">دقيقة</div></div>
+      <div class="count-box"><div class="count-num gold-text" id="cd-secs">00</div><div class="text-xs mt-2 text-[#b9ccc2]">ثانية</div></div>
+    </div>
+    <p class="mt-8 text-sm text-[#cdbf9c] reveal d2" id="cdNote">نعدّ اللحظات لنراكم بيننا 🤍</p>
+
+    <div class="mt-8 flex flex-wrap gap-3 justify-center reveal d2">
+      <button class="btn" id="icsBtn">🗓️ أضف الموعد إلى تقويمك</button>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== تفاصيل الحفل ===================== -->
+<section id="details" class="relative py-20 px-5 overflow-hidden">
+  <div class="absolute inset-0 pattern pattern-soft"></div>
+  <div class="relative max-w-5xl mx-auto">
+    <h2 class="text-center font-ruqaa text-3xl sm:text-4xl gold-text mb-3 reveal leading-[1.7]">تفاصيل الحفل</h2>
+    <div class="gold-line w-32 mx-auto mb-14 reveal"></div>
+
+    <div class="grid sm:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-8 text-center reveal d1">
+        <div class="text-3xl mb-4">📅</div>
+        <p class="text-xs tracking-[.3em] text-[color:var(--gold)] mb-3">التاريخ</p>
+        <p class="font-amiri text-2xl text-[color:var(--gold-l)]">20 / 10 / 2026</p>
+        <p class="text-sm text-[#cdbf9c] mt-2" id="dayName">يوم الثلاثاء</p>
+        <p class="text-xs text-[#8fa79c] mt-1 font-amiri" id="hijriCard"></p>
+      </div>
+      <div class="glass rounded-2xl p-8 text-center reveal d2">
+        <div class="text-3xl mb-4">🕕</div>
+        <p class="text-xs tracking-[.3em] text-[color:var(--gold)] mb-3">الوقت</p>
+        <p class="font-amiri text-2xl text-[color:var(--gold-l)]">6:00 مساءً</p>
+        <p class="text-sm text-[#cdbf9c] mt-2">استقبال المدعوين من الساعة السادسة</p>
+      </div>
+      <div class="glass rounded-2xl p-8 text-center reveal d3">
+        <div class="text-3xl mb-4">🏛️</div>
+        <p class="text-xs tracking-[.3em] text-[color:var(--gold)] mb-3">المكان</p>
+        <p class="font-amiri text-2xl text-[color:var(--gold-l)]">صالة فرح</p>
+        <p class="text-sm text-[#cdbf9c] mt-2">القاعة الكبرى · مدخل الضيوف</p>
+      </div>
+    </div>
+
+    <!-- برنامج الحفل -->
+    <div class="glass rounded-2xl p-8 sm:p-10 mt-10 reveal d2">
+      <h3 class="font-ruqaa text-2xl gold-text mb-8 text-center leading-[1.8]">برنامج السهرة</h3>
+      <div class="tl max-w-xl mx-auto">
+        <div class="tl-item"><p class="text-[color:var(--gold-l)] font-semibold">6:00 مساءً — استقبال المدعوين</p><p class="text-sm text-[#a9c0b6] mt-1">القهوة العربية والتمر وترحيب الأهل</p></div>
+        <div class="tl-item"><p class="text-[color:var(--gold-l)] font-semibold">7:00 مساءً — زفّة العروسين</p><p class="text-sm text-[#a9c0b6] mt-1">دخول العروسين وسط الأهازيج والتكبير</p></div>
+<!--         <div class="tl-item"><p class="text-[color:var(--gold-l)] font-semibold">8:00 مساءً — العشاء</p><p class="text-sm text-[#a9c0b6] mt-1">مائدة الضيوف · بالهناء والشفاء</p></div>
+ -->        <div class="tl-item"><p class="text-[color:var(--gold-l)] font-semibold">8:30 مساءً — التهاني والتصوير</p><p class="text-sm text-[#a9c0b6] mt-1">صورة تذكارية مع العروسين</p></div>
+        <div class="tl-item" style="margin-bottom:0"><p class="text-[color:var(--gold-l)] font-semibold">9:00 مساءً — الختام</p><p class="text-sm text-[#a9c0b6] mt-1">وداع الضيوف وشكرهم على المشاركة</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== معرض ===================== -->
+<section class="relative py-16 px-5">
+  <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="photo aspect-[3/4] reveal"><img src="https://images.pexels.com/photos/19777312/pexels-photo-19777312.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="خواتم"></div>
+    <div class="photo aspect-[3/4] reveal d1"><img src="https://images.pexels.com/photos/16120245/pexels-photo-16120245.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="تجهيزات"></div>
+    <div class="photo aspect-[3/4] reveal d2"><img src="https://images.pexels.com/photos/29040917/pexels-photo-29040917.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="شموع"></div>
+    <div class="photo aspect-[3/4] reveal d3"><img src="https://images.pexels.com/photos/17315455/pexels-photo-17315455.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="قاعة"></div>
+  </div>
+</section>
+
+<!-- ===================== الموقع والخريطة ===================== -->
+<section id="location" class="relative py-20 px-5 overflow-hidden">
+  <div class="absolute inset-0 pattern pattern-soft"></div>
+  <div class="relative max-w-5xl mx-auto">
+    <h2 class="text-center font-ruqaa text-3xl sm:text-4xl gold-text mb-3 reveal leading-[1.7]">موقع الصالة</h2>
+    <div class="gold-line w-32 mx-auto mb-6 reveal"></div>
+    <p class="text-center text-sm text-[#cdbf9c] mb-10 reveal d1">
+      صالة فرح — اضغط على الخريطة أو استخدم الأزرار للوصول مباشرة عبر تطبيق الخرائط
+    </p>
+
+    <div class="map-wrap reveal d1">
+      <iframe
+        id="gmap"
+        src="https://www.google.com/maps?q=31.3598172,34.2985265&hl=ar&z=17&output=embed"
+        width="100%" height="430" style="border:0" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade" title="خريطة صالة فرح"></iframe>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-3 justify-center reveal d2">
+      <a class="btn btn-solid" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/dir/?api=1&destination=31.3598172,34.2985265">🧭 الاتجاهات عبر Google Maps</a>
+      <a class="btn" target="_blank" rel="noopener"
+         href="https://waze.com/ul?ll=31.3598172,34.2985265&navigate=yes">🚗 فتح في Waze</a>
+      <button class="btn" id="copyCoords">📋 نسخ الإحداثيات</button>
+    </div>
+
+    <p class="text-center mt-5 text-xs text-[#8fa79c] font-mono ltr:tracking-wider" dir="ltr">31.3598172 , 34.2985265</p>
+  </div>
+</section>
+
+<!-- ===================== تأكيد الحضور ===================== -->
+<section id="rsvp" class="relative py-20 px-5">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="text-center font-ruqaa text-3xl sm:text-4xl gold-text mb-3 reveal leading-[1.7]">تأكيد الحضور</h2>
+    <div class="gold-line w-32 mx-auto mb-6 reveal"></div>
+    <p class="text-center text-sm text-[#cdbf9c] mb-10 reveal d1">حضوركم يزيد فرحتنا فرحاً — نرجو تأكيد الحضور قبل 15/10/2026</p>
+
+    <form id="rsvpForm" class="glass rounded-2xl p-7 sm:p-9 space-y-5 reveal d1">
+      <div>
+        <label for="gname">الاسم الكريم</label>
+        <input id="gname" name="gname" type="text" placeholder="مثال: أبو محمد الزطمة" required>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5">
+        <div>
+          <label for="gcount">عدد الأشخاص</label>
+          <input id="gcount" name="gcount" type="number" min="1" max="30" value="2" required>
+        </div>
+        <div>
+          <label for="gside">من جهة</label>
+          <select id="gside" name="gside">
+            <option>أهل العريس</option>
+            <option>أهل العروس</option>
+            <option>صديق / زميل</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label for="gstatus">هل ستشرّفنا؟</label>
+        <select id="gstatus" name="gstatus">
+          <option value="نعم سأحضر بإذن الله">نعم، سأحضر بإذن الله 🤍</option>
+          <option value="للأسف لن أتمكن من الحضور">للأسف لن أتمكن من الحضور</option>
+        </select>
+      </div>
+      <div>
+        <label for="gmsg">كلمة تهنئة للعروسين (اختياري)</label>
+        <textarea id="gmsg" name="gmsg" rows="3" placeholder="بارك الله لكما وبارك عليكما وجمع بينكما في خير"></textarea>
+      </div>
+      <div class="flex flex-wrap gap-3 pt-2">
+        <button type="submit" class="btn btn-solid flex-1">إرسال التأكيد ✓</button>
+        <button type="button" class="btn flex-1" id="waBtn">إرسال عبر واتساب</button>
+      </div>
+      <p class="text-[11px] text-[#8fa79c] text-center leading-relaxed">
+        تُحفظ ردودكم في متصفحكم فقط (بدون خادم)، ويمكن إرسالها للعريس مباشرة عبر واتساب.
+      </p>
+    </form>
+
+    <div id="thanks" class="hidden glass rounded-2xl p-8 text-center mt-6">
+      <div class="text-4xl mb-3">🤍</div>
+      <p class="font-ruqaa text-2xl gold-text leading-[1.8]">شكراً لكم</p>
+      <p class="text-sm text-[#cdbf9c] mt-3" id="thanksMsg"></p>
+    </div>
+
+    <!-- سجل التهاني -->
+    <div class="mt-10 reveal d2">
+      <h3 class="font-ruqaa text-2xl gold-text mb-5 text-center leading-[1.8]">سجل التهاني</h3>
+      <div id="wishes" class="space-y-3"></div>
+      <p id="noWishes" class="text-center text-sm text-[#8fa79c]">لا توجد تهانٍ بعد… كن أول المهنئين ✦</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== كلمة العروسين ===================== -->
+<section class="relative py-20 px-5 overflow-hidden">
+  <div class="absolute inset-0 pattern pattern-soft"></div>
+  <div class="relative max-w-3xl mx-auto text-center">
+    <div class="monogram reveal">B &nbsp;♡&nbsp; L</div>
+    <h2 class="font-ruqaa text-3xl sm:text-4xl gold-text mt-8 mb-3 reveal d1 leading-[1.7]">كلمة العروسين</h2>
+    <div class="gold-line w-32 mx-auto mb-10 reveal d1"></div>
+
+    <div class="glass rounded-2xl px-6 sm:px-10 py-10 reveal d2">
+      <p class="text-base sm:text-lg text-[#cdbf9c] leading-[2.2]">
+        الحمد لله الذي جمع القلوب على طاعته، وجعل السكن والمودّة آيةً من آياته.
+        <br>
+        في هذا اليوم نفتح صفحة جديدة من حياتنا، ونودّ أن تكونوا أول من يكتب فيها سطر الفرح.
+        <br>
+        حضوركم ليس مجاملة… بل هو جزء أصيل من ذكرى لن تُنسى، ودعواتكم هديّة لا تُعادلها هديّة.
+      </p>
+      <p class="mt-8 font-amiri text-xl sm:text-2xl text-[color:var(--gold-l)] leading-[2.2]">
+        ﴿ هُوَ الَّذِي خَلَقَكُم مِّن نَّفْسٍ وَاحِدَةٍ وَجَعَلَ مِنْهَا زَوْجَهَا لِيَسْكُنَ إِلَيْهَا ﴾
+      </p>
+      <p class="mt-3 text-xs text-[color:var(--gold)]">سورة الأعراف: ١٨٩</p>
+      <p class="mt-8 font-ruqaa text-xl gold-text leading-[1.9]">بشير &nbsp;&amp;&nbsp; لمى</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== إرشادات الضيوف ===================== -->
+<!-- <section class="relative py-20 px-5">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-center font-ruqaa text-3xl sm:text-4xl gold-text mb-3 reveal leading-[1.7]">معلومات تهمّكم</h2>
+    <div class="gold-line w-32 mx-auto mb-12 reveal"></div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="note-card reveal d1">
+        <p class="text-2xl mb-3">🚗</p>
+        <h3 class="text-[color:var(--gold-l)] font-semibold mb-2">مواقف السيارات</h3>
+        <p class="text-sm text-[#a9c0b6] leading-relaxed">تتوفر مواقف أمام صالة فرح، ويُفضّل الحضور قبل موعد الزفّة بقليل لتفادي الازدحام.</p>
+      </div>
+      <div class="note-card reveal d1">
+        <p class="text-2xl mb-3">⏰</p>
+        <h3 class="text-[color:var(--gold-l)] font-semibold mb-2">الالتزام بالموعد</h3>
+        <p class="text-sm text-[#a9c0b6] leading-relaxed">يبدأ الاستقبال الساعة 6:00 مساءً، وتنطلق الزفّة الساعة 7:00 — وجودكم مبكراً يسعدنا.</p>
+      </div>
+      <div class="note-card reveal d2">
+        <p class="text-2xl mb-3">📸</p>
+        <h3 class="text-[color:var(--gold-l)] font-semibold mb-2">التصوير</h3>
+        <p class="text-sm text-[#a9c0b6] leading-relaxed">يوجد مصوّر رسمي للحفل، ونرجو مراعاة خصوصية الحضور عند التصوير أو النشر.</p>
+      </div>
+      <div class="note-card reveal d2">
+        <p class="text-2xl mb-3">🍽️</p>
+        <h3 class="text-[color:var(--gold-l)] font-semibold mb-2">العشاء</h3>
+        <p class="text-sm text-[#a9c0b6] leading-relaxed">يُقدَّم العشاء الساعة 8:00 مساءً داخل القاعة… بالهناء والشفاء مقدّماً.</p>
+      </div>
+      <div class="note-card reveal d3">
+        <p class="text-2xl mb-3">👨‍👩‍👧</p>
+        <h3 class="text-[color:var(--gold-l)] font-semibold mb-2">الأطفال</h3>
+        <p class="text-sm text-[#a9c0b6] leading-relaxed">الأطفال أهلاً وسهلاً مع مرافقة ذويهم، حرصاً على سلامتهم وراحة الجميع.</p>
+      </div>
+      <div class="note-card reveal d3">
+        <p class="text-2xl mb-3">🤍</p>
+        <h3 class="text-[color:var(--gold-l)] font-semibold mb-2">أجمل هديّة</h3>
+        <p class="text-sm text-[#a9c0b6] leading-relaxed">دعوةٌ صادقة بالبركة والذريّة الصالحة… وحضوركم بحد ذاته أثمن ما نتمناه.</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- ===================== دعاء الختام ===================== -->
+<section class="relative py-24 px-5 overflow-hidden">
+  <img src="https://images.pexels.com/photos/16120154/pexels-photo-16120154.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=627&w=1200" alt="" class="absolute inset-0 w-full h-full object-cover opacity-15">
+  <div class="absolute inset-0" style="background:linear-gradient(180deg,rgba(5,13,11,.92),rgba(7,35,29,.85),rgba(5,13,11,.95))"></div>
+  <div class="relative max-w-3xl mx-auto text-center">
+    <div class="glass arch px-6 sm:px-12 py-14 reveal">
+      <p class="font-amiri text-2xl sm:text-3xl leading-[2.3] text-[color:var(--cream)]">
+        ﴿ رَبَّنَا هَبْ لَنَا مِنْ أَزْوَاجِنَا وَذُرِّيَّاتِنَا قُرَّةَ أَعْيُنٍ وَاجْعَلْنَا لِلْمُتَّقِينَ إِمَامًا ﴾
+      </p>
+      <p class="mt-5 text-sm text-[color:var(--gold)]">سورة الفرقان: ٧٤</p>
+      <div class="gold-line w-2/3 mx-auto my-8"></div>
+      <p class="font-amiri text-xl sm:text-2xl text-[color:var(--gold-l)] leading-[2.2]">
+        «بَارَكَ اللهُ لَكَ، وَبَارَكَ عَلَيْكَ، وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ»
+      </p>
+      <p class="mt-3 text-xs text-[#9ab5a9]">حديث شريف — رواه أبو داود والترمذي</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== أدوات المشاركة والفوتر ===================== -->
+<footer class="relative py-16 px-5 border-t border-[rgba(212,175,55,.25)]">
+  <div class="max-w-3xl mx-auto text-center">
+    <div class="flex flex-wrap gap-3 justify-center no-print">
+      <button class="btn" id="shareWa">📤 مشاركة عبر واتساب</button>
+      <button class="btn" id="copyLink">🔗 نسخ رابط الدعوة</button>
+      <button class="btn" id="printBtn">🖨️ طباعة / حفظ PDF</button>
+    </div>
+
+    <!-- مولد دعوة باسم المدعو -->
+    <div class="glass rounded-2xl p-7 mt-10 text-right no-print">
+      <h3 class="font-ruqaa text-xl gold-text mb-4 leading-[1.8]">أنشئ دعوة خاصة باسم المدعو ✦</h3>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <input id="guestGen" type="text" placeholder="اكتب اسم المدعو… مثال: عائلة أبو سلمية الكريمة">
+        <button class="btn btn-solid whitespace-nowrap" id="genBtn">إنشاء ونسخ الرابط</button>
+      </div>
+      <p class="text-[11px] text-[#8fa79c] mt-3 leading-relaxed">
+        سيظهر اسم المدعو داخل البطاقة عند فتح الرابط. أرسل الرابط لكل ضيف على حدة ✉️
+      </p>
+      <p class="text-[11px] mt-2 break-all text-[color:var(--gold-l)]" id="genOut"></p>
+    </div>
+
+    <div class="gold-line w-40 mx-auto my-10"></div>
+    <p class="font-ruqaa text-2xl gold-text leading-[1.9]">بشير &nbsp;♡&nbsp; لمى</p>
+    <p class="text-sm text-[#9ab5a9] mt-2">20 / 10 / 2026 — صالة فرح — 6:00 مساءً</p>
+    <p class="text-xs text-[#6e857b] mt-6">وجودكم شرف لنا وفرحتنا لا تكتمل إلا بكم 🤍</p>
+  </div>
+</footer>
+
+<!-- شريط سفلي للجوال -->
+<div class="bottom-bar sm:hidden" id="bottomBar">
+  <a class="btn" href="#location">📍 الموقع</a>
+  <a class="btn btn-solid" href="#rsvp">✓ تأكيد</a>
+  <button class="btn" id="shareWa2">📤 مشاركة</button>
+</div>
+
+<script>
+/* ============================================================
+   إعدادات الدعوة — يمكنك تعديلها بسهولة
+============================================================ */
+const CONFIG = {
+  groom: "بشير عصام الدين بشير الزطمة",
+  bride: "لمى عماد عودة أبو سلمية",
+  hall: "صالة فرح",
+  lat: 31.3598172,
+  lng: 34.2985265,
+  date: new Date(2026, 9, 20, 18, 0, 0), // 20/10/2026 الساعة 6 مساءً
+  whatsapp: "970000000000" // ✏️ ضع رقم العريس بصيغة دولية بدون +
+};
+
+/* ============================================================
+   فتح المظروف
+============================================================ */
+const envScreen = document.getElementById('envelope-screen');
+const env = document.getElementById('env');
+const openBtn = document.getElementById('openBtn');
+
+function openInvitation(){
+  if(env.classList.contains('opened')) return;
+  env.classList.add('opened');
+  chime();
+  setTimeout(()=>{
+    envScreen.classList.add('open');
+    document.body.classList.remove('locked');
+    window.scrollTo({top:0});
+    revealAll();
+    burst(120);
+    setTimeout(()=>document.getElementById('bottomBar').classList.add('show'),1200);
+  },1500);
+}
+openBtn.addEventListener('click', openInvitation);
+env.addEventListener('click', openInvitation);
+
+/* ============================================================
+   اسم المدعو من الرابط ?guest=
+============================================================ */
+const params = new URLSearchParams(location.search);
+const guest = (params.get('guest')||'').trim();
+if(guest){
+  document.getElementById('envGuest').textContent = 'دعوة خاصة لـ: ' + guest;
+  document.getElementById('guestLine').innerHTML =
+    'يدعوان <span class="font-ruqaa text-[color:var(--gold-l)] text-xl sm:text-2xl">'+ escapeHtml(guest) +'</span><br>لمشاركتهم فرحتهم بحفل زفاف ولديهما';
+  const g = document.getElementById('gname'); if(g) g.value = guest;
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+/* ============================================================
+   التاريخ الهجري واسم اليوم
+============================================================ */
+try{
+  const day = new Intl.DateTimeFormat('ar', {weekday:'long'}).format(CONFIG.date);
+  document.getElementById('dayName').textContent = 'يوم ' + day;
+  document.getElementById('heroDate').textContent = day + ' 20 / 10 / 2026';
+  const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',
+      {day:'numeric',month:'long',year:'numeric'}).format(CONFIG.date);
+  document.getElementById('hijriDate').textContent = 'الموافق ' + hijri;
+  document.getElementById('hijriCard').textContent = hijri;
+}catch(e){}
+
+/* ============================================================
+   العدّاد التنازلي
+============================================================ */
+const pad = n => String(n).padStart(2,'0');
+function tick(){
+  const diff = CONFIG.date - new Date();
+  if(diff <= 0){
+    document.getElementById('countdown').innerHTML =
+      '<p class="font-ruqaa text-3xl gold-text leading-[1.8]">تمّ الزفاف بحمد الله 🤍</p>';
+    document.getElementById('cdNote').textContent = 'الحمد لله الذي بنعمته تتمّ الصالحات';
+    return;
+  }
+  const s = Math.floor(diff/1000);
+  document.getElementById('cd-days').textContent  = pad(Math.floor(s/86400));
+  document.getElementById('cd-hours').textContent = pad(Math.floor(s%86400/3600));
+  document.getElementById('cd-mins').textContent  = pad(Math.floor(s%3600/60));
+  document.getElementById('cd-secs').textContent  = pad(s%60);
+}
+tick(); setInterval(tick,1000);
+
+/* ============================================================
+   ظهور العناصر عند التمرير + شريط التقدم
+============================================================ */
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target);} });
+},{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+function revealAll(){
+  document.querySelectorAll('header .reveal').forEach((el,i)=>setTimeout(()=>el.classList.add('in'), i*160));
+}
+window.addEventListener('scroll',()=>{
+  const h = document.documentElement;
+  const p = h.scrollTop / (h.scrollHeight - h.clientHeight) * 100;
+  document.getElementById('progress').style.width = p + '%';
+});
+
+/* ============================================================
+   بتلات وذرات ذهبية
+============================================================ */
+const cv = document.getElementById('petals'), ctx = cv.getContext('2d');
+let W,H,parts=[];
+function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
+resize(); addEventListener('resize',resize);
+function P(boost){
+  return {
+    x: Math.random()*W,
+    y: boost ? Math.random()*H : -20 - Math.random()*H*.4,
+    r: 3 + Math.random()*7,
+    sp: .35 + Math.random()*1.1,
+    sw: Math.random()*1.6,
+    a: Math.random()*Math.PI*2,
+    va: (Math.random()-.5)*.05,
+    o: .25 + Math.random()*.5,
+    t: Math.random() < .45 ? 'petal' : 'dot'
+  };
+}
+for(let i=0;i<60;i++) parts.push(P(true));
+function burst(n){ for(let i=0;i<n;i++){ const p=P(false); p.y = Math.random()*H*.3; parts.push(p);} }
+function draw(){
+  ctx.clearRect(0,0,W,H);
+  parts.forEach(p=>{
+    p.y += p.sp; p.x += Math.sin(p.y/60)*p.sw*.4; p.a += p.va;
+    if(p.y > H+30){ p.y = -20; p.x = Math.random()*W; }
+    ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a); ctx.globalAlpha = p.o;
+    if(p.t==='petal'){
+      ctx.fillStyle = '#d4af37';
+      ctx.beginPath(); ctx.ellipse(0,0,p.r,p.r*.5,0,0,Math.PI*2); ctx.fill();
+    }else{
+      ctx.fillStyle = '#f3e2ab';
+      ctx.beginPath(); ctx.arc(0,0,p.r*.28,0,Math.PI*2); ctx.fill();
+    }
+    ctx.restore();
+  });
+  if(parts.length > 220) parts = parts.slice(-180);
+  requestAnimationFrame(draw);
+}
+draw();
+
+/* ============================================================
+   موسيقى هادئة (Web Audio — بدون ملفات خارجية)
+============================================================ */
+let actx=null, musicOn=false, musicTimer=null;
+const scale = [293.66, 311.13, 369.99, 392.00, 440.00, 466.16, 554.37, 587.33]; // مقام حجاز
+function ensureCtx(){ if(!actx) actx = new (window.AudioContext||window.webkitAudioContext)(); return actx; }
+function note(freq, time, dur, vol){
+  const c = ensureCtx();
+  const o = c.createOscillator(), g = c.createGain(), o2 = c.createOscillator();
+  o.type='sine'; o2.type='triangle';
+  o.frequency.value=freq; o2.frequency.value=freq*2.002;
+  g.gain.setValueAtTime(0,time);
+  g.gain.linearRampToValueAtTime(vol,time+.04);
+  g.gain.exponentialRampToValueAtTime(0.0001,time+dur);
+  o.connect(g); o2.connect(g); g.connect(c.destination);
+  o.start(time); o2.start(time); o.stop(time+dur); o2.stop(time+dur);
+}
+function chime(){
+  try{ const c=ensureCtx(); const t=c.currentTime;
+    [0,1,3,5].forEach((i,k)=>note(scale[i], t+k*.16, 1.6, .12));
+  }catch(e){}
+}
+function playLoop(){
+  const c = ensureCtx(); let t = c.currentTime + .1;
+  const seq = [0,2,3,4,3,2,1,0,4,5,4,3];
+  seq.forEach((i,k)=>note(scale[i], t + k*.55, 1.5, .055));
+  musicTimer = setTimeout(playLoop, seq.length*550);
+}
+document.getElementById('musicBtn').addEventListener('click', function(){
+  musicOn = !musicOn;
+  this.classList.toggle('playing', musicOn);
+  if(musicOn){ ensureCtx().resume(); playLoop(); }
+  else { clearTimeout(musicTimer); }
+});
+
+/* ============================================================
+   أدوات: نسخ / مشاركة / تقويم
+============================================================ */
+const toast = document.getElementById('toast');
+function showToast(msg){ toast.textContent = msg; toast.classList.add('show'); setTimeout(()=>toast.classList.remove('show'),2200); }
+async function copy(text,msg){
+  try{ await navigator.clipboard.writeText(text); }
+  catch(e){ const ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  showToast(msg||'تم النسخ ✓');
+}
+document.getElementById('copyCoords').onclick = ()=> copy(CONFIG.lat+','+CONFIG.lng,'تم نسخ الإحداثيات ✓');
+document.getElementById('copyLink').onclick  = ()=> copy(location.origin+location.pathname,'تم نسخ رابط الدعوة ✓');
+document.getElementById('printBtn').onclick  = ()=> window.print();
+
+const shareText = 'بسم الله الرحمن الرحيم\nيسرّنا دعوتكم لحضور حفل زفاف\n'+CONFIG.groom+'\nو\n'+CONFIG.bride+
+  '\n🗓️ الثلاثاء 20/10/2026\n🕕 الساعة 6:00 مساءً\n🏛️ '+CONFIG.hall+
+  '\n📍 https://www.google.com/maps/dir/?api=1&destination='+CONFIG.lat+','+CONFIG.lng+'\n\nالدعوة الإلكترونية: ';
+function shareWhatsApp(){
+  window.open('https://wa.me/?text='+encodeURIComponent(shareText + location.href),'_blank');
+}
+document.getElementById('shareWa').onclick = shareWhatsApp;
+document.getElementById('shareWa2').onclick = shareWhatsApp;
+
+document.getElementById('icsBtn').onclick = ()=>{
+  const fmt = d => d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+'T'+pad(d.getHours())+pad(d.getMinutes())+'00';
+  const end = new Date(CONFIG.date.getTime()+4.5*3600*1000);
+  const ics = [
+    'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Wedding//Invitation//AR','CALSCALE:GREGORIAN','BEGIN:VEVENT',
+    'UID:'+Date.now()+'@wedding',
+    'DTSTAMP:'+fmt(new Date()),
+    'DTSTART:'+fmt(CONFIG.date),
+    'DTEND:'+fmt(end),
+    'SUMMARY:حفل زفاف بشير الزطمة و لمى أبو سلمية',
+    'DESCRIPTION:نتشرف بحضوركم — '+CONFIG.hall+' الساعة 6:00 مساءً',
+    'LOCATION:'+CONFIG.hall+' ('+CONFIG.lat+','+CONFIG.lng+')',
+    'GEO:'+CONFIG.lat+';'+CONFIG.lng,
+    'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:تذكير: زفاف بشير و لمى غداً','END:VALARM',
+    'END:VEVENT','END:VCALENDAR'
+  ].join('\r\n');
+  const blob = new Blob([ics],{type:'text/calendar;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'wedding-bashir-lama.ics'; a.click();
+  showToast('تم تنزيل ملف التقويم ✓');
+};
+
+/* مولد دعوة باسم المدعو */
+document.getElementById('genBtn').onclick = ()=>{
+  const name = document.getElementById('guestGen').value.trim();
+  if(!name){ showToast('اكتب اسم المدعو أولاً'); return; }
+  const url = location.origin + location.pathname + '?guest=' + encodeURIComponent(name);
+  document.getElementById('genOut').textContent = url;
+  copy(url,'تم إنشاء الرابط ونسخه ✓');
+};
+
+/* ============================================================
+   RSVP + سجل التهاني (localStorage)
+============================================================ */
+const KEY = 'wedding_rsvp_bashir_lama';
+const load = ()=>{ try{ return JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(e){ return []; } };
+const save = d => localStorage.setItem(KEY, JSON.stringify(d));
+
+function renderWishes(){
+  const list = load().filter(r=>r.msg);
+  const box = document.getElementById('wishes');
+  document.getElementById('noWishes').style.display = list.length ? 'none' : 'block';
+  box.innerHTML = list.slice().reverse().map(r=>
+    '<div class="wish"><p class="text-sm text-[color:var(--gold-l)] font-semibold">'+escapeHtml(r.name)+
+    ' <span class="text-[10px] text-[#8fa79c] font-normal">· '+escapeHtml(r.side)+'</span></p>'+
+    '<p class="text-sm text-[#cdbf9c] mt-1 leading-relaxed">'+escapeHtml(r.msg)+'</p></div>').join('');
+}
+renderWishes();
+
+function formData(){
+  return {
+    name: document.getElementById('gname').value.trim() || 'ضيف كريم',
+    count: document.getElementById('gcount').value || '1',
+    side: document.getElementById('gside').value,
+    status: document.getElementById('gstatus').value,
+    msg: document.getElementById('gmsg').value.trim()
+  };
+}
+
+document.getElementById('rsvpForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const d = formData();
+  const all = load(); all.push({...d, at:Date.now()}); save(all);
+  renderWishes();
+  const t = document.getElementById('thanks');
+  t.classList.remove('hidden');
+  document.getElementById('thanksMsg').innerHTML =
+    escapeHtml(d.name) + '، تم تسجيل ردّك: <b>'+escapeHtml(d.status)+'</b>' +
+    (d.status.startsWith('نعم') ? '<br>عدد الأشخاص: <b>'+escapeHtml(d.count)+'</b><br>بانتظاركم يوم الثلاثاء 20/10/2026 🤍' : '<br>نفتقدكم… ودعواتكم تكفينا 🤍');
+  burst(90); chime();
+  t.scrollIntoView({behavior:'smooth', block:'center'});
+  e.target.reset();
+});
+
+document.getElementById('waBtn').onclick = ()=>{
+  const d = formData();
+  const msg = 'السلام عليكم ورحمة الله\nتأكيد حضور حفل زفاف بشير و لمى\n'+
+    '👤 الاسم: '+d.name+'\n👥 عدد الأشخاص: '+d.count+'\n🎗️ الجهة: '+d.side+'\n✅ الحالة: '+d.status+
+    (d.msg ? '\n💌 تهنئة: '+d.msg : '');
+  const num = CONFIG.whatsapp.replace(/\D/g,'');
+  const base = (num && num !== '970000000000') ? 'https://wa.me/'+num+'?text=' : 'https://wa.me/?text=';
+  window.open(base + encodeURIComponent(msg), '_blank');
+};
+
+/* إخفاء الشريط السفلي عند الوصول للفوتر */
+const footerObs = new IntersectionObserver(en=>{
+  en.forEach(x=>document.getElementById('bottomBar').classList.toggle('show', !x.isIntersecting));
+},{threshold:.25});
+footerObs.observe(document.querySelector('footer'));
+</script>
+</body>
+</html>
