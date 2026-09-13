@@ -523,8 +523,8 @@ label{font-size:.85rem;color:#cbbf9e;margin-bottom:6px;display:block}
           <select id="gside" name="gside">
             <option>أهل العريس</option>
             <option>أهل العروس</option>
-            <option>صديق / زميل</option>
-          </select>
+<!--             <option>صديق / زميل</option>
+ -->          </select>
         </div>
       </div>
       <div>
@@ -539,8 +539,8 @@ label{font-size:.85rem;color:#cbbf9e;margin-bottom:6px;display:block}
         <textarea id="gmsg" name="gmsg" rows="3" placeholder="بارك الله لكما وبارك عليكما وجمع بينكما في خير"></textarea>
       </div>
       <div class="flex flex-wrap gap-3 pt-2">
-<!--         <button type="submit" class="btn btn-solid flex-1">إرسال التأكيد ✓</button>
- -->        <button type="button" class="btn flex-1" id="waBtn">إرسال عبر واتساب</button>
+<!--         <button type="submit" class="btn btn-solid flex-1">إرسال التأكيد ✓</button> --> 
+       <button type="button" class="btn flex-1" id="waBtn">إرسال عبر واتساب</button>
       </div>
       <p class="text-[11px] text-[#8fa79c] text-center leading-relaxed">
         تُحفظ ردودكم في متصفحكم فقط (بدون خادم)، ويمكن إرسالها للعريس مباشرة عبر واتساب.
@@ -980,6 +980,10 @@ document.getElementById('waBtn').onclick = ()=>{
     '👤 الاسم: '+d.name+'\n👥 عدد الأشخاص: '+d.count+'\n🎗️ الجهة: '+d.side+'\n✅ الحالة: '+d.status+
     (d.msg ? '\n💌 تهنئة: '+d.msg : '');
   const num = CONFIG.whatsapp.replace(/\D/g,'');
+  if(d.side == "أهل العروس"){
+    num = "970595612511";
+  }
+
   const base = (num && num !== '970000000000') ? 'https://wa.me/'+num+'?text=' : 'https://wa.me/?text=';
   window.open(base + encodeURIComponent(msg), '_blank');
 };
