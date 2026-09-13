@@ -539,8 +539,8 @@ label{font-size:.85rem;color:#cbbf9e;margin-bottom:6px;display:block}
         <textarea id="gmsg" name="gmsg" rows="3" placeholder="بارك الله لكما وبارك عليكما وجمع بينكما في خير"></textarea>
       </div>
       <div class="flex flex-wrap gap-3 pt-2">
-<!--         <button type="submit" class="btn btn-solid flex-1">إرسال التأكيد ✓</button>
- -->        <button type="button" class="btn flex-1" id="waBtn">إرسال عبر واتساب</button>
+        <button type="submit" class="btn btn-solid flex-1">إرسال التأكيد ✓</button>
+        <button type="button" class="btn flex-1" id="waBtn">إرسال عبر واتساب</button>
       </div>
       <p class="text-[11px] text-[#8fa79c] text-center leading-relaxed">
         تُحفظ ردودكم في متصفحكم فقط (بدون خادم)، ويمكن إرسالها للعريس مباشرة عبر واتساب.
@@ -694,7 +694,7 @@ const CONFIG = {
   lat: 31.3598172,
   lng: 34.2985265,
   date: new Date(2026, 9, 20, 18, 0, 0), // 20/10/2026 الساعة 6 مساءً
-  whatsapp: "00972597818641" // ✏️ ضع رقم العريس بصيغة دولية بدون +
+  whatsapp: "972597818641" // ✏️ ضع رقم العريس بصيغة دولية بدون +
 };
 
 /* ============================================================
@@ -938,27 +938,15 @@ const KEY = 'wedding_rsvp_bashir_lama';
 const load = ()=>{ try{ return JSON.parse(localStorage.getItem(KEY)||'[]'); }catch(e){ return []; } };
 const save = d => localStorage.setItem(KEY, JSON.stringify(d));
 
-// البيانات الثابتة التي ستظهر لجميع زوار الموقع
-const staticWishes = [
-  { name: "أحمد العلي", side: "عريس", msg: "ألف مبروك يا غالي، بارك الله لكما وجمع بينكما في خير!" },
-  { name: "سارة محمود", side: "عروس", msg: "مبارك من القلب، أتمنى لكما حياة سعيدة ومستقبل زاهر 🤍" },
-  { name: "عمر خالد", side: "صديق", msg: "دامت دياركم بالخير والأفراح عامرين!" }
-];
-
 function renderWishes(){
-  // تم استبدال load() بالبيانات الثابتة staticWishes
-  const list = staticWishes.filter(r => r.msg);
+  const list = load().filter(r=>r.msg);
   const box = document.getElementById('wishes');
-  
   document.getElementById('noWishes').style.display = list.length ? 'none' : 'block';
-  
-  box.innerHTML = list.slice().reverse().map(r =>
-    '<div class="wish"><p class="text-sm text-[color:var(--gold-l)] font-semibold">' + escapeHtml(r.name) +
-    ' <span class="text-[10px] text-[#8fa79c] font-normal">· ' + escapeHtml(r.side) + '</span></p>' +
-    '<p class="text-sm text-[#cdbf9c] mt-1 leading-relaxed">' + escapeHtml(r.msg) + '</p></div>'
-  ).join('');
+  box.innerHTML = list.slice().reverse().map(r=>
+    '<div class="wish"><p class="text-sm text-[color:var(--gold-l)] font-semibold">'+escapeHtml(r.name)+
+    ' <span class="text-[10px] text-[#8fa79c] font-normal">· '+escapeHtml(r.side)+'</span></p>'+
+    '<p class="text-sm text-[#cdbf9c] mt-1 leading-relaxed">'+escapeHtml(r.msg)+'</p></div>').join('');
 }
-
 renderWishes();
 
 function formData(){
