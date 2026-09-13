@@ -728,7 +728,7 @@ const guest = (params.get('guest')||'').trim();
 if(guest){
   document.getElementById('envGuest').textContent = 'دعوة خاصة لـ: ' + guest;
   document.getElementById('guestLine').innerHTML =
-    'يدعو <span class="font-ruqaa text-[color:var(--gold-l)] text-xl sm:text-2xl">'+ escapeHtml(guest) +'</span><br>لمشاركته فرحته بحفل زفاف ابنه';
+    'بدعوة <span class="font-ruqaa text-[color:var(--gold-l)] text-xl sm:text-2xl">'+ escapeHtml(guest) +'</span><br>لمشاركته فرحتهم بحفل زفاف ';
   const g = document.getElementById('gname'); if(g) g.value = guest;
 }
 function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
