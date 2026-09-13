@@ -979,7 +979,8 @@ document.getElementById('waBtn').onclick = ()=>{
   const msg = 'السلام عليكم ورحمة الله\nتأكيد حضور حفل زفاف بشير و لمى\n'+
     '👤 الاسم: '+d.name+'\n👥 عدد الأشخاص: '+d.count+'\n🎗️ الجهة: '+d.side+'\n✅ الحالة: '+d.status+
     (d.msg ? '\n💌 تهنئة: '+d.msg : '');
-  const num = CONFIG.whatsapp.replace(/\D/g,'');
+  let num = CONFIG.whatsapp.replace(/\D/g,'');
+  console.log(d.side);
   if(d.side == "أهل العروس"){
     num = "970595612511";
   }
