@@ -943,48 +943,89 @@ window.addEventListener('scroll',()=>{
 });
 
 /* ============================================================
-   بتلات زهرية وذرات ذهبية متساقطة
+    ورود كاملة وذرات ذهبية متساقطة
 ============================================================ */
 const cv = document.getElementById('petals'), ctx = cv.getContext('2d');
-let W,H,parts=[];
+let W, H, parts = [];
+
 function resize(){ W = cv.width = innerWidth; H = cv.height = innerHeight; }
-resize(); addEventListener('resize',resize);
+resize(); addEventListener('resize', resize);
+
 function P(boost){
-  const colors = ['#f4c2c2', '#e8b4bd', '#c7828d', '#e5c07b', '#f8d7da'];
+  const colors = ['#ebc3bc', '#d8a79d', '#b37b70', '#e5c2a2', '#f4eae1'];
   return {
     x: Math.random()*W,
     y: boost ? Math.random()*H : -20 - Math.random()*H*.3,
-    r: 4 + Math.random()*7,
+    r: 6 + Math.random()*8, // حجم الوردة
     sp: .35 + Math.random()*0.9,
     sw: Math.random()*1.5,
     a: Math.random()*Math.PI*2,
-    va: (Math.random()-.5)*.04,
-    o: .3 + Math.random()*.5,
+    va: (Math.random()-.5)*.03,
+    o: .4 + Math.random()*.5,
     color: colors[Math.floor(Math.random()*colors.length)],
-    t: Math.random() < .6 ? 'petal' : 'dot'
+    t: Math.random() < .7 ? 'flower' : 'dot'
   };
 }
-for(let i=0;i<55;i++) parts.push(P(true));
-function burst(n){ for(let i=0;i<n;i++){ const p=P(false); p.y = Math.random()*H*.3; parts.push(p);} }
+
+for(let i=0; i<55; i++) parts.push(P(true));
+
+function burst(n){ for(let i=0; i<n; i++){ const p=P(false); p.y = Math.random()*H*.3; parts.push(p);} }
+
+// دالة رسم الوردة الكاملة
+function drawFlower(r, color) {
+  const petals = 5;
+  
+  // رسم البتلات الـ 5
+  ctx.fillStyle = color;
+  for (let i = 0; i < petals; i++) {
+    const angle = (i * 2 * Math.PI) / petals;
+    ctx.save();
+    ctx.rotate(angle);
+    ctx.beginPath();
+    // رسم بتلة بيضاوية ممتدة من المركز
+    ctx.ellipse(r * 0.6, 0, r * 0.6, r * 0.35, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+
+  // رسم مركز الوردة الذهبي
+  ctx.beginPath();
+  ctx.arc(0, 0, r * 0.3, 0, Math.PI * 2);
+  ctx.fillStyle = '#cbb08c';
+  ctx.fill();
+}
+
 function draw(){
-  ctx.clearRect(0,0,W,H);
-  parts.forEach(p=>{
-    p.y += p.sp; p.x += Math.sin(p.y/60)*p.sw*.4; p.a += p.va;
+  ctx.clearRect(0, 0, W, H);
+  parts.forEach(p => {
+    p.y += p.sp; 
+    p.x += Math.sin(p.y/60)*p.sw*.4; 
+    p.a += p.va;
+    
     if(p.y > H+30){ p.y = -20; p.x = Math.random()*W; }
-    ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.a); ctx.globalAlpha = p.o;
-    ctx.fillStyle = p.color;
-    if(p.t==='petal'){
-      ctx.beginPath(); ctx.ellipse(0,0,p.r,p.r*.55,0,0,Math.PI*2); ctx.fill();
-    }else{
-      ctx.beginPath(); ctx.arc(0,0,p.r*.3,0,Math.PI*2); ctx.fill();
+    
+    ctx.save(); 
+    ctx.translate(p.x, p.y); 
+    ctx.rotate(p.a); 
+    ctx.globalAlpha = p.o;
+    
+    if(p.t === 'flower'){
+      drawFlower(p.r, p.color);
+    } else {
+      ctx.fillStyle = '#cbb08c'; // ألوان الذرات
+      ctx.beginPath(); 
+      ctx.arc(0, 0, p.r*.25, 0, Math.PI*2); 
+      ctx.fill();
     }
+    
     ctx.restore();
   });
+
   if(parts.length > 180) parts = parts.slice(-140);
   requestAnimationFrame(draw);
 }
-draw();
 
+draw();
 /* ============================================================
    أدوات: نسخ / مشاركة / تقويم
 ============================================================ */
