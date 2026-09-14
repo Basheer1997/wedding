@@ -870,11 +870,19 @@ function playLoop(){
   seq.forEach((i,k)=>note(scale[i], t + k*.55, 1.5, .055));
   musicTimer = setTimeout(playLoop, seq.length*550);
 }
-document.getElementById('musicBtn').addEventListener('click', function(){
+// 1. إنشاء عنصر الصوت الخارجي وتحديد مسار الملف
+const bgMusic = new Audio('audio/song.mpeg'); 
+bgMusic.loop = true; // لتكرار الموسيقى تلقائياً عند انتهائها
+
+document.getElementById('musicBtn').addEventListener('click', function() {
   musicOn = !musicOn;
   this.classList.toggle('playing', musicOn);
-  if(musicOn){ ensureCtx().resume(); playLoop(); }
-  else { clearTimeout(musicTimer); }
+  
+  if (musicOn) {
+    bgMusic.play(); // تشغيل الموسيقى الخارجية
+  } else {
+    bgMusic.pause(); // إيقاف الموسيقى مؤقتاً
+  }
 });
 
 /* ============================================================
