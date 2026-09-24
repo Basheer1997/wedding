@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>دعوة زفاف · بشير الزطمة & لمى أبو سلمية · 20 / 10 / 2026</title>
-<meta name="description" content="بطاقة دعوة زفاف بشير عصام الدين الزطمة و لمى عماد عودة أبو سلمية — الثلاثاء 20/10/2026 — صالة فرح — الساعة 6 مساءً">
+<title>دعوة زفاف · بشير الزطمة & لمى أبو سلمية · 2 / 11 / 2026</title>
+<meta name="description" content="بطاقة دعوة زفاف بشير عصام الدين الزطمة و لمى عماد عودة أبو سلمية — الاثنين 2/11/2026 — صالة فرح — الساعة 6 مساءً">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -330,7 +330,7 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
       <div class="env-card">
         <div>
           <p class="font-ruqaa text-2xl" style="color:var(--rose-deep)">بشير &nbsp;<span style="color:var(--gold-warm)">♡</span>&nbsp; لمى</p>
-          <p class="text-xs mt-2 tracking-widest text-[#8e6e76]">20 · 10 · 2026</p>
+          <p class="text-xs mt-2 tracking-widest text-[#8e6e76]">2 · 11 · 2026</p>
         </div>
       </div>
       <div class="env-flap"></div>
@@ -371,7 +371,7 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
 
     <div class="mt-8 flex items-center justify-center gap-4 reveal d3">
       <span class="gold-line w-16 md:w-24"></span>
-      <span class="font-amiri text-xl md:text-2xl font-bold" style="color:var(--rose-deep)" id="heroDate">الثلاثاء 20 / 10 / 2026</span>
+      <span class="font-amiri text-xl md:text-2xl font-bold" style="color:var(--rose-deep)" id="heroDate">الاثنين 2 / 11 / 2026</span>
       <span class="gold-line w-16 md:w-24"></span>
     </div>
     <p class="mt-3 text-base font-semibold text-[#664d53] reveal d3">صالة فرح &nbsp;·&nbsp; الساعة 6:00 مساءً</p>
@@ -519,8 +519,8 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
       <div class="glass rounded-3xl p-8 text-center reveal d1">
         <div class="text-3xl mb-4">📅</div>
         <p class="text-xs tracking-[.3em] font-bold mb-2" style="color:var(--rose-gold)">التاريخ</p>
-        <p class="font-amiri text-2xl font-bold" style="color:var(--rose-deep)">20 / 10 / 2026</p>
-        <p class="text-sm text-[color:var(--text-muted)] mt-2" id="dayName">يوم الثلاثاء</p>
+        <p class="font-amiri text-2xl font-bold" style="color:var(--rose-deep)">2 / 11 / 2026</p>
+        <p class="text-sm text-[color:var(--text-muted)] mt-2" id="dayName">يوم الاثنينp>
         <p class="text-xs mt-1 font-amiri text-[#8c6f76]" id="hijriCard"></p>
       </div>
       <div class="glass rounded-3xl p-8 text-center reveal d2">
@@ -755,7 +755,7 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
 
     <div class="gold-line w-40 mx-auto my-10"></div>
     <p class="font-ruqaa text-3xl gold-text leading-[1.9]">بشير &nbsp;♡&nbsp; لمى</p>
-    <p class="text-sm text-[color:var(--text-muted)] mt-2">20 / 10 / 2026 — صالة فرح — 6:00 مساءً</p>
+    <p class="text-sm text-[color:var(--text-muted)] mt-2">2 / 11 / 2026 — صالة فرح — 6:00 مساءً</p>
     <p class="text-xs text-[#8c6f76] mt-6">وجودكم شرف لنا وفرحتنا لا تكتمل إلا بكم 🌸</p>
   </div>
 </footer>
@@ -777,7 +777,7 @@ const CONFIG = {
   hall: "صالة فرح",
   lat: 31.3598172,
   lng: 34.2985265,
-  date: new Date(2026, 9, 20, 18, 0, 0), // 20/10/2026 الساعة 6 مساءً
+  date: new Date(2026, 10, 2, 18, 0, 0), // 20/10/2026 الساعة 6 مساءً
   whatsapp: "972597818641" // ✏️ رقم واتسابك بصيغة دولية بدون +
 };
 
@@ -899,7 +899,7 @@ function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','
 try{
   const day = new Intl.DateTimeFormat('ar', {weekday:'long'}).format(CONFIG.date);
   document.getElementById('dayName').textContent = 'يوم ' + day;
-  document.getElementById('heroDate').textContent = day + ' 20 / 10 / 2026';
+  document.getElementById('heroDate').textContent = day + ' 2 / 11 / 2026';
   const hijri = new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',
       {day:'numeric',month:'long',year:'numeric'}).format(CONFIG.date);
   document.getElementById('hijriDate').textContent = 'الموافق ' + hijri;
@@ -1039,7 +1039,7 @@ document.getElementById('copyLink').onclick  = ()=> copy(location.origin+locatio
 document.getElementById('printBtn').onclick  = ()=> window.print();
 
 const shareText = 'بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ\nيسرّنا دعوتكم لحضور حفل زفاف\n'+CONFIG.groom+'\nو\n'+CONFIG.bride+
-  '\n🗓️ الثلاثاء 20/10/2026\n🕕 الساعة 6:00 مساءً\n🏛️ '+CONFIG.hall+
+  '\n🗓️ الاثنين 2/11/2026\n🕕 الساعة 6:00 مساءً\n🏛️ '+CONFIG.hall+
   '\n📍 https://www.google.com/maps/dir/?api=1&destination='+CONFIG.lat+','+CONFIG.lng+'\n\nالدعوة الإلكترونية: ';
 function shareWhatsApp(){
   window.open('https://wa.me/?text='+encodeURIComponent(shareText + location.href),'_blank');
@@ -1115,7 +1115,7 @@ document.getElementById('rsvpForm').addEventListener('submit', e=>{
   t.classList.remove('hidden');
   document.getElementById('thanksMsg').innerHTML =
     escapeHtml(d.name) + '، تم تسجيل ردّك: <b>'+escapeHtml(d.status)+'</b>' +
-    (d.status.startsWith('نعم') ? '<br>عدد الأشخاص: <b>'+escapeHtml(d.count)+'</b><br>بانتظاركم يوم الثلاثاء 20/10/2026 🌸' : '<br>نفتقدكم… ودعواتكم تكفينا 🤍');
+    (d.status.startsWith('نعم') ? '<br>عدد الأشخاص: <b>'+escapeHtml(d.count)+'</b><br>بانتظاركم يوم الاثنين 2/11/2026 🌸' : '<br>نفتقدكم… ودعواتكم تكفينا 🤍');
   burst(80);
   t.scrollIntoView({behavior:'smooth', block:'center'});
   e.target.reset();
