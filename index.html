@@ -392,7 +392,7 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
 <body class="locked">
 
 <!-- عنصر الصوت الخارجي المطلوب -->
-<audio id="weddingAudio" preload="auto">
+<audio id="weddingAudio" autoplay preload="auto">
   <source src="audio/song.mpeg" type="audio/mpeg">
   <source src="audio/song.mp3" type="audio/mpeg">
 </audio>
@@ -1249,7 +1249,7 @@ function formData() {
 /* ============================================================
    5. مشغل الأغنية الصوتية (Audio Engine)
 ============================================================ */
-let isPlaying = false;
+let isPlaying = true;
 let fallbackSynth = null;
 
 function playFallback() {
@@ -1333,6 +1333,39 @@ document.addEventListener('DOMContentLoaded', () => {
       audioEl.play().catch(() => {});
     });
   }
+});
+
+// محاولة تشغيل الأغنية تلقائياً عند فتح الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+  const audioEl = document.getElementById('weddingAudio');
+
+  if (!audioEl) return;
+
+  audioEl.autoplay = true;
+  audioEl.muted = false;
+
+  const tryPlay = () => {
+    audioEl.play().catch(() => {
+      // إذا منع المتصفح التشغيل التلقائي، ننتظر أول تفاعل
+      // من الزائر ونحاول التشغيل دون الحاجة إلى زر الأغنية
+    });
+  };
+
+  tryPlay();
+
+  const resumeOnInteraction = () => {
+    if (audioEl.paused) {
+      tryPlay();
+    }
+
+    if (!audioEl.paused) {
+      document.removeEventListener('click', resumeOnInteraction);
+      document.removeEventListener('touchstart', resumeOnInteraction);
+    }
+  };
+
+  document.addEventListener('click', resumeOnInteraction);
+  document.addEventListener('touchstart', resumeOnInteraction);
 });
 
 /* ============================================================
