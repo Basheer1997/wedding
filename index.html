@@ -39,7 +39,7 @@ body{
     radial-gradient(circle at 85% 60%, rgba(253,245,230,0.8) 0%, transparent 45%),
     radial-gradient(circle at 50% 90%, rgba(244,217,222,0.5) 0%, transparent 50%),
     linear-gradient(rgba(250, 247, 242, 0), rgba(250, 247, 242, 0)), 
-    url('https://lahzatna.com/themes/builtin/reverie/assets/share.jpg');
+    url('https://lahzatna.com/themes/builtin/reverie/assets/hero.mp4');
     
   background-attachment: local;
   background-position: top center;
@@ -456,9 +456,17 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
 
 <!-- ===================== الغلاف الرئيسي الفاتح ===================== -->
  <div id="main-content" style="opacity: 0; transition: opacity 1s ease; pointer-events: none;">
-<header class="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(rgba(250, 247, 242, 0), rgba(250, 247, 242,0)),;">
+<header class="relative min-h-[100svh] flex items-center justify-center overflow-hidden bg-cover bg-center">
   
-  <div class="absolute inset-0 pattern pattern-soft"></div>
+  <!-- عنصر الفيديو في الخلفية بدلاً من الصورة -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+    <source src="https://lahzatna.com/themes/builtin/reverie/assets/hero.mp4" type="video/mp4">
+  </video>
+
+  <!-- طبقة التدرج اللوني (إن وجدت فوق الفيديو لضبط الإضاءة) -->
+  <div class="absolute inset-0 z-0" style="background-image: linear-gradient(rgba(250, 247, 242, 0), rgba(250, 247, 242, 0));"></div>
+
+  <div class="absolute inset-0 pattern pattern-soft z-0"></div>
 
   <div class="relative z-10 text-center px-6 py-20 max-w-3xl mx-auto">
     <p class="font-amiri text-2xl md:text-3xl gold-text reveal">بِسْمِ اللَّـهِ الرَّحْمَـٰنِ الرَّحِيمِ</p>
@@ -488,7 +496,7 @@ label{font-size:.85rem;color:var(--text-muted);margin-bottom:6px;display:block;f
     </div>
   </div>
 
-  <a href="#verse" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-center animate-bounce" style="color:var(--rose-deep)">
+  <a href="#verse" class="absolute bottom-6 left-1/2 -translate-x-1/2 text-xs text-center animate-bounce z-10" style="color:var(--rose-deep)">
     <span class="block mb-1">انزل للأسفل</span>
     <span class="text-lg">⌄</span>
   </a>
